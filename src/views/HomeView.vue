@@ -1,5 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import CarouselComponent from '../components/CarouselComponent.vue';
+import imgFiles from '../mock/imgFiles';
+</script>
 
 <template>
-  <main>메인 페이지</main>
+  <main>
+    <carousel-component :img-files="imgFiles" />
+  </main>
 </template>

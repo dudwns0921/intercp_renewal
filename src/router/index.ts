@@ -12,22 +12,22 @@ const router = createRouter({
     {
       path: '/introduction',
       name: 'introduction',
-      component: () => import('../views/IntroductionView.vue'),
+      component: () => import('../views/introduction/MainView.vue'),
     },
     {
       path: '/internal',
       name: 'internalPrograms',
-      component: () => import('../views/InternalProgramsView.vue'),
+      component: () => import('../views/internalPrograms/MainView.vue'),
     },
     {
       path: '/ministryPart',
       name: 'ministryPart',
-      component: () => import('../views/MinistryPartView.vue'),
+      component: () => import('../views/ministryPart/MainView.vue'),
     },
     {
       path: '/overseas',
       name: 'overseasPrograms',
-      component: () => import('../views/OverseasProgramsView.vue'),
+      component: () => import('../views/overseas/MainView.vue'),
     },
     {
       path: '/regionalStudy',
