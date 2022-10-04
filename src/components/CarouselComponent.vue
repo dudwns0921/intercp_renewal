@@ -1,3 +1,37 @@
+<template>
+  <div class="carousel__img-container">
+    <img
+      v-for="(item, index) in props.imgFiles"
+      :key="item"
+      :src="item"
+      :class="[
+        'carousel__img--default',
+        {
+          'carousel__img--active': returnIsActive(index),
+        },
+      ]"
+    />
+    <div class="carousel__txt-container">
+      <p>열방을 향한 끊이지 않는 기도,</p>
+      <p>열방을 위한 끊이지 않는 찬양,</p>
+      <p class="carousel__txt--highlighted">인터CP</p>
+    </div>
+    <div class="carousel__control">
+      <div
+        v-for="(item, index) in props.imgFiles"
+        :key="index"
+        :class="[
+          'carousel__control-dot--default',
+          {
+            'carousel__control-dot--active': returnIsActive(index),
+          },
+        ]"
+        @click="changeImgIdx(index)"
+      ></div>
+    </div>
+  </div>
+</template>
+
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
 
@@ -24,42 +58,6 @@ function changeImgIdx(index: number): void {
 }
 </script>
 
-<template>
-  <div class="carousel__img-container">
-    <img
-      v-for="(item, index) in props.imgFiles"
-      :key="item"
-      :src="item"
-      :class="[
-        'carousel__img--default',
-        {
-          'carousel__img--active': returnIsActive(index),
-        },
-      ]"
-    />
-    <div class="carousel__txt-container">
-      열방을 향한 끊이지 않는 기도,
-      <br />
-      열방을 위한 끊이지 않는 찬양,
-      <br />
-      <div class="carousel__txt--highlighted">인터CP</div>
-    </div>
-    <div class="carousel__control">
-      <div
-        v-for="(item, index) in props.imgFiles"
-        :key="index"
-        :class="[
-          'carousel__control-dot--default',
-          {
-            'carousel__control-dot--active': returnIsActive(index),
-          },
-        ]"
-        @click="changeImgIdx(index)"
-      ></div>
-    </div>
-  </div>
-</template>
-
 <style scoped lang="scss">
 .carousel__img-container {
   position: relative;
@@ -77,7 +75,6 @@ function changeImgIdx(index: number): void {
     .carousel__txt--highlighted {
       margin-top: 65px;
       font-size: 48px;
-      font-weight: 400;
     }
   }
 
