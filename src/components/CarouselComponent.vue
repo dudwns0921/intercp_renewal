@@ -7,7 +7,7 @@
       :class="[
         'carousel__img--default',
         {
-          'carousel__img--active': returnIsActive(index),
+          'carousel__img--active': index === currentIdx,
         },
       ]"
     />
@@ -19,43 +19,26 @@
     <div class="carousel__control">
       <div
         v-for="(item, index) in props.imgFiles"
-        :key="index"
+        :key="item"
         :class="[
           'carousel__control-dot--default',
           {
-            'carousel__control-dot--active': returnIsActive(index),
+            'carousel__control-dot--active': index === currentIdx,
           },
         ]"
-        @click="changeImgIdx(index)"
+        @click="currentIdx = index"
       ></div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 
 const props = defineProps({
   imgFiles: Array,
 });
-const isActiveObj = ref({ currentIdx: 0 });
-
-onMounted(() => {
-  for (let i = 0; i < props.imgFiles?.length; i++) {
-    isActiveObj.value[`isActive${i}`] = false;
-  }
-  isActiveObj.value.isActive0 = true;
-});
-
-function returnIsActive(index) {
-  return isActiveObj.value[`isActive${index}`];
-}
-
-function changeImgIdx(index: number): void {
-  isActiveObj.value[`isActive${isActiveObj.value.currentIdx}`] = false;
-  isActiveObj.value[`isActive${index}`] = true;
-  isActiveObj.value.currentIdx = index;
-}
+const currentIdx = ref(0);
 </script>
 
 <style scoped lang="scss">
