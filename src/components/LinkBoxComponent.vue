@@ -1,5 +1,5 @@
 <template>
-  <div @click="routeTo" class="link-box__container" :style="cssVariable">
+  <div @click="routeTo" class="link-box__container">
     <p class="link-box__title">{{ props.title }}</p>
     <div class="link-box__link">자세히 보기</div>
   </div>
@@ -14,15 +14,6 @@ const router = useRouter();
 const props = defineProps({
   title: { type: String, required: true },
   to: { type: String, required: true },
-  width: { type: String, required: true },
-  height: { type: String, required: true },
-});
-
-const cssVariable = computed(() => {
-  return {
-    width: props.width,
-    height: props.height,
-  };
 });
 
 function routeTo() {
@@ -33,6 +24,7 @@ function routeTo() {
 <style lang="scss" scoped>
 .link-box__container {
   display: flex;
+  height: 160px;
   position: relative;
   justify-content: center;
   box-shadow: 0px 3px 6px #0000004d;

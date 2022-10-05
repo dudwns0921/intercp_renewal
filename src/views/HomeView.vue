@@ -20,7 +20,7 @@
   <section>
     <div class="introduction-content">
       <div class="introduction-content__video-container">
-        <h1>InterCP 소개 동영상</h1>
+        <p>InterCP 소개 동영상</p>
         <iframe
           width="988"
           height="557"
@@ -37,24 +37,9 @@
   <section>
     <div class="introduction-content">
       <div class="introduction-content__link-box-container">
-        <link-box-component
-          title="BACK TO BIBLE"
-          width="460px"
-          height="160px"
-          to="introduction"
-        />
-        <link-box-component
-          title="BACK TO JEJUS"
-          width="460px"
-          height="160px"
-          to="internalPrograms"
-        />
-        <link-box-component
-          title="JEJUS MOVEMENT"
-          width="460px"
-          height="160px"
-          to="overseasPrograms"
-        />
+        <link-box-component title="BACK TO BIBLE" to="introduction" />
+        <link-box-component title="BACK TO JEJUS" to="internalPrograms" />
+        <link-box-component title="JEJUS MOVEMENT" to="overseasPrograms" />
       </div>
     </div>
   </section>
@@ -80,8 +65,28 @@
   <blank-component :height="70" />
   <section class="introduction-content__programs">
     <div class="introduction-content introduction-content__programs-container">
-      <h1>참여 프로그램</h1>
-      <h1>국내외 프로그램</h1>
+      <p>참여 프로그램</p>
+      <blank-component :height="24" />
+      <div class="introduction-content__participate-programs-container">
+        <photo-box-component
+          v-for="imgFile in imgFiles.slice(0, 2)"
+          :key="imgFile"
+          :img-file="imgFile"
+        />
+      </div>
+      <blank-component :height="40" />
+      <p>국내외 프로그램</p>
+      <blank-component :height="24" />
+      <div class="introduction-content__in-out-programs-container">
+        <link-box-component-decorated
+          v-for="program in PROGRAMS"
+          :key="program.title"
+          :title="program.title"
+          :is-recruiting="program.isRecruiting"
+        />
+      </div>
+      <blank-component :height="24" />
+      <div class="introduction-content__in-out-programs-more-btn">더보기</div>
     </div>
   </section>
 </template>
@@ -91,9 +96,12 @@ import CarouselComponent from '../components/CarouselComponent.vue';
 import BlankComponent from '../components/BlankComponent.vue';
 import LinkBoxComponent from '../components/LinkBoxComponent.vue';
 import LinkBoxComponentLarge from '../components/LinkBoxComponentLarge.vue';
+import LinkBoxComponentDecorated from '../components/LinkBoxComponentDecorated.vue';
 import TabComponent from '../components/TabComponent.vue';
-import { TABS } from '../constant/constants';
-import imgFiles from '../mock/imgFiles';
+import PhotoBoxComponent from '../components/PhotoBoxComponent.vue';
+
+import { TABS, PROGRAMS } from '../constant/constants';
+import { imgFiles } from '../mock/mockData';
 </script>
 
 <style lang="scss" scoped>
@@ -153,7 +161,7 @@ section,
   width: 100%;
   height: 700px;
   background: linear-gradient(180deg, #3e74ba 0%, #111e4b 100%);
-  h1 {
+  p {
     display: block;
     font-size: 25px;
     font-weight: bold;
@@ -162,9 +170,10 @@ section,
 }
 
 .introduction-content__link-box-container {
-  display: flex;
   width: 100%;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
 }
 
 .introduction-content__programs {
@@ -174,9 +183,39 @@ section,
 .introduction-content__programs-container {
   padding: 50px 0;
   height: 822px;
-  h1 {
-    display: block;
-    font-size: 25px;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  p {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .introduction-content__participate-programs-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+  }
+
+  .introduction-content__in-out-programs-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px 30px;
+  }
+  .introduction-content__in-out-programs-more-btn {
+    width: 108px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    color: white;
+    background-color: #3e74ba;
+    cursor: pointer;
   }
 }
 </style>
