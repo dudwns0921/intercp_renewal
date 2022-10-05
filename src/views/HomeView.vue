@@ -47,7 +47,7 @@
   <section>
     <div class="introduction-content">
       <link-box-component-large
-        title="TARGET2030"
+        title="TARGET 2030"
         subTitle="한국교회 세계선교비전"
         message="2030년까지 10만명의 선교사를 파송하여 세계복음화를 완성하자는 한국교회 선교비전이다."
         width="100%"

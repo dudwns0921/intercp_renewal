@@ -125,7 +125,7 @@ function leaveBottomNavBar() {
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 97px 360px 0 71px;
+    padding: 67px 360px 0 71px;
     .menu-container {
       display: grid;
       grid-auto-columns: max-content;
@@ -143,7 +143,7 @@ function leaveBottomNavBar() {
     }
     .close-btn {
       position: absolute;
-      top: 95px;
+      top: 67px;
       right: 160px;
       font-size: 60px;
       font-weight: bold;
