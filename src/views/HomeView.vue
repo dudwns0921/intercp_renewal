@@ -4,7 +4,7 @@
   <section>
     <div class="introduction-content">
       <div class="introduction-content__txt-container">
-        <div class="introduction-content__figure left-bracket"></div>
+        <div class="figure left-bracket"></div>
         <div class="introduction-content__txt">
           <p>InterCP international은</p>
           <p>미전도종족 전방개척선교를 수행하는</p>
@@ -12,7 +12,7 @@
             평신도 전문인 선교단체<span>입니다</span>
           </p>
         </div>
-        <div class="introduction-content__figure right-bracket"></div>
+        <div class="figure right-bracket"></div>
       </div>
     </div>
   </section>
@@ -86,7 +86,7 @@
         />
       </div>
       <blank-component :height="24" />
-      <div class="introduction-content__in-out-programs-more-btn">더보기</div>
+      <div class="more-btn">더보기</div>
     </div>
   </section>
 </template>
@@ -122,7 +122,7 @@ section,
   align-items: center;
   width: 645px;
   height: 250px;
-  .introduction-content__figure {
+  .figure {
     position: absolute;
     width: 80px;
     height: 80px;
@@ -204,7 +204,7 @@ section,
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px 30px;
   }
-  .introduction-content__in-out-programs-more-btn {
+  .more-btn {
     width: 108px;
     height: 42px;
     display: flex;
