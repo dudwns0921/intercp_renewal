@@ -11,6 +11,7 @@
       </div>
     </div>
     <div class="tab__content">
+      <!-- FIX ME: 컴포넌트화 혹은 slot 사용 -->
       <table>
         <tbody>
           <tr v-for="computedInfo in computedInfos" :key="computedInfo.no">

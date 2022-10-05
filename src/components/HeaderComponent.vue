@@ -11,81 +11,11 @@
           <div class="logo">
             <div>INTERCP 로고</div>
           </div>
-          <div class="sub-menu-container">
-            <p class="sub-menu-title">INTERCP 소개</p>
-            <div class="underline"></div>
-            <p>개요</p>
-            <p>사역정신</p>
-            <p>신앙고백</p>
-            <p>신학 매뉴얼</p>
-            <p>선교정책</p>
-            <p>사명선언문</p>
-            <p>훈련원, 산하단체, 연구실</p>
-            <p>선교운동</p>
-            <p>선교사 파송절차</p>
-            <p>사역개념도</p>
-            <p>선교훈련과정</p>
-            <p>국내외 지부현황</p>
-            <p>인터콥 캠퍼스</p>
-            <p>정기집회안내</p>
-            <p>사역에 동역하려면</p>
-          </div>
-          <div class="sub-menu-container">
-            <p class="sub-menu-title">국내훈련프로그램</p>
-            <div class="underline"></div>
-            <p>비전스쿨</p>
-            <p>해외비전스쿨</p>
-            <p>영어비전스쿨</p>
-            <p>여성비전스쿨</p>
-            <p>직장여성비전스쿨</p>
-            <p>시니어비전스쿨</p>
-            <p>청소년비전스쿨</p>
-            <p>청사에듀스쿨</p>
-            <p>부모비전스쿨</p>
-            <p>어린이비전스쿨</p>
-            <p>키즈비전스쿨</p>
-            <p>BTJ스쿨</p>
-            <p>MnB스쿨</p>
-            <p>MnM스쿨</p>
-            <p>MK샘스쿨</p>
-            <p>목회자비전스쿨</p>
-            <p>ADS(예배기도사역자훈련)</p>
-            <p>비전스쿨 강의내용</p>
-          </div>
-          <div class="sub-menu-container">
-            <p class="sub-menu-title">전문사역분야</p>
-            <div class="underline"></div>
-            <p>개요</p>
-            <p>사역정신</p>
-            <p>신앙고백</p>
-            <p>신학 매뉴얼</p>
-            <p>선교정책</p>
-            <p>사명선언문</p>
-            <p>훈련원, 산하단체, 연구실</p>
-            <p>선교운동</p>
-            <p>선교사 파송절차</p>
-            <p>사역개념도</p>
-            <p>선교훈련과정</p>
-            <p>국내외 지부현황</p>
-            <p>인터콥 캠퍼스</p>
-            <p>정기집회안내</p>
-            <p>사역에 동역하려면</p>
-          </div>
-          <div class="sub-menu-container">
-            <p class="sub-menu-title">해외프로그램</p>
-            <div class="underline"></div>
-            <p>개요</p>
-            <p>의료분야</p>
-            <p>IT분야</p>
-            <p>스포츠분야</p>
-            <p>과학기술분야</p>
-          </div>
-          <div class="sub-menu-container">
-            <p class="sub-menu-title">지역연구</p>
-          </div>
-          <div class="sub-menu-container">
-            <p class="sub-menu-title">게시판</p>
-          </div>
+          <sub-menu-component
+            v-for="data in SUB_MENU_DATA"
+            :sub-menu-data="data"
+            :key="data.title"
+          />
         </div>
         <div class="close-btn" @click="clickCloseBtn">X</div>
       </nav>
@@ -147,6 +77,8 @@
   </div>
 </template>
 <script setup>
+import SubMenuComponent from '../components/SubMenuComponent.vue';
+import { SUB_MENU_DATA } from '../constant/constants';
 import { ref } from 'vue';
 
 const showBottomNavBar = ref(false);
@@ -207,19 +139,6 @@ function leaveBottomNavBar() {
         justify-content: center;
         align-items: center;
         font-size: 24px;
-      }
-      .sub-menu-container {
-        .sub-menu-title {
-          font-size: 24px;
-        }
-        .underline {
-          width: 60px;
-          border-bottom: 1px solid white;
-          margin-bottom: 28px;
-        }
-        p {
-          margin-bottom: 10px;
-        }
       }
     }
     .close-btn {
