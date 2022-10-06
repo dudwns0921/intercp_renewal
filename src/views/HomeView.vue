@@ -72,6 +72,8 @@
           v-for="imgFile in imgFiles.slice(0, 2)"
           :key="imgFile"
           :img-file="imgFile"
+          height="265px"
+          :shadow="true"
         />
       </div>
       <blank-component :height="40" />

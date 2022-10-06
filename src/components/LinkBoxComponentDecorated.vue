@@ -47,6 +47,7 @@ const computedTitle = computed(() => {
   align-items: center;
   font-size: 22px;
   box-shadow: 0px 3px 6px #00000026;
+  cursor: pointer;
 
   .link-box__figure {
     position: absolute;

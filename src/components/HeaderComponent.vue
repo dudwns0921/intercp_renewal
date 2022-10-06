@@ -1,4 +1,5 @@
 <template>
+  <!-- FIX ME : top nav, bottom nav 컴포넌트화 시키는 것 논의 필요 -->
   <div class="header__navigation-container">
     <div
       :class="[
@@ -9,7 +10,7 @@
       <nav class="header__top-navigation-bar">
         <div class="menu-container">
           <div class="logo">
-            <div>INTERCP 로고</div>
+            <div><router-link to="/">로고</router-link></div>
           </div>
           <sub-menu-component
             v-for="data in SUB_MENU_DATA"
@@ -51,7 +52,7 @@
       <div class="menu-container">
         <p class="menu-title">INTERCP 소개</p>
         <div class="sub-menu-container">
-          <p>개요</p>
+          <router-link to="/introduction">개요</router-link>
           <p>사역정신</p>
           <p>신앙고백</p>
           <p>신학 매뉴얼</p>
@@ -80,6 +81,7 @@
 import SubMenuComponent from '../components/SubMenuComponent.vue';
 import { SUB_MENU_DATA } from '../constant/constants';
 import { ref } from 'vue';
+import { RouterLink } from 'vue-router';
 
 const showBottomNavBar = ref(false);
 const showTopNavBar = ref(false);
@@ -203,7 +205,8 @@ function leaveBottomNavBar() {
   .sub-menu-container {
     display: flex;
     flex-direction: column;
-    p {
+    p,
+    a {
       margin-bottom: 15px;
     }
   }
