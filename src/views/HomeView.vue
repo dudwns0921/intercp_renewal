@@ -93,7 +93,7 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import CarouselComponent from '../components/CarouselComponent.vue';
 import BlankComponent from '../components/BlankComponent.vue';
 import LinkBoxComponent from '../components/LinkBoxComponent.vue';

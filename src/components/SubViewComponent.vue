@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import PhotoBoxComponent from '../components/PhotoBoxComponent.vue';
 </script>
 

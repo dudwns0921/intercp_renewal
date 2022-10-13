@@ -1,11 +1,11 @@
-export const imgFiles: String[] = [
+export const imgFiles = [
   'https://source.unsplash.com/78A265wPiO4',
   'https://source.unsplash.com/odxB5oIG_iA',
   'https://source.unsplash.com/y2azHvupCVo',
   'https://source.unsplash.com/-kZo8vfI2wE',
 ];
 
-export const newInfos: Object[] = [
+export const newInfos = [
   {
     no: 199,
     title: '마틴루터의 종교개혁 95개조 조항전문',
@@ -28,7 +28,7 @@ export const newInfos: Object[] = [
   },
 ];
 
-export const columnInfos: Object[] = [
+export const columnInfos = [
   {
     no: 199,
     title: '칼럼1',
@@ -51,7 +51,7 @@ export const columnInfos: Object[] = [
   },
 ];
 
-export const reviewInfos: Object[] = [
+export const reviewInfos = [
   {
     no: 199,
     title: '리뷰1',
@@ -74,7 +74,7 @@ export const reviewInfos: Object[] = [
   },
 ];
 
-export const boardInfos: Object[] = [
+export const boardInfos = [
   {
     no: 199,
     title: '게시판1',

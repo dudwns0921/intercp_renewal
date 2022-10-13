@@ -11,8 +11,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { computed } from 'vue-demi';
+<script setup>
+import { computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter();

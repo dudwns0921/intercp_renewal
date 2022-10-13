@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const props = defineProps({
   imgFile: { type: String, required: true },
   height: { type: String, required: true },
