@@ -42,7 +42,7 @@ const props = defineProps({
   tabs: { type: Array, required: true },
 });
 const activeTab = ref(props.tabs[0]);
-// Fixme : computed 속성 이름 변경 필요
+// FIX ME : computed 속성 이름 변경 필요
 const computedInfos = computed(() => {
   switch (activeTab.value) {
     case "What's new":
