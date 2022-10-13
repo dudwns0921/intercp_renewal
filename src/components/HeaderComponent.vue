@@ -51,6 +51,7 @@
     >
       <div class="menu-container">
         <p class="menu-title">INTERCP 소개</p>
+        <!-- FIX ME : 컴포넌트화 필요 -->
         <div class="sub-menu-container">
           <router-link to="/introduction">개요</router-link>
           <p>사역정신</p>
@@ -176,6 +177,7 @@ function leaveBottomNavBar() {
   background-color: white;
   cursor: pointer;
   font-size: 18px;
+  border-bottom: 1px solid black;
 
   .menu-container,
   .etc {
@@ -199,7 +201,6 @@ function leaveBottomNavBar() {
   height: 324px;
   transform: translateY(-244px);
   background-color: white;
-  border-top: 1px solid black;
   display: flex;
   align-items: center;
 
