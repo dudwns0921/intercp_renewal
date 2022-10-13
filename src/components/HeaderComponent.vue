@@ -108,6 +108,7 @@ function leaveBottomNavBar() {
   height: 80px;
   background-color: white;
 }
+
 // 드롭다운 메뉴 애니메이션 설정
 .header__top-navigation-bar-container,
 .header__top-navigation-bar-container--shown,
@@ -115,6 +116,7 @@ function leaveBottomNavBar() {
 .header__bottom-navigation-bar--shown {
   transition: transform 0.5s ease-in-out;
 }
+
 .header__top-navigation-bar-container {
   position: absolute;
   z-index: 99;
@@ -123,16 +125,19 @@ function leaveBottomNavBar() {
   transform: translateY(-778px);
   background-color: #3e74ba;
   color: white;
+
   .header__top-navigation-bar {
     position: relative;
     width: 100%;
     height: 100%;
     padding: 67px 360px 0 71px;
+
     .menu-container {
       display: grid;
       grid-auto-columns: max-content;
       grid-auto-flow: column;
       grid-column-gap: 85px;
+
       .logo {
         width: 178px;
         height: 64px;
@@ -143,6 +148,7 @@ function leaveBottomNavBar() {
         font-size: 24px;
       }
     }
+
     .close-btn {
       position: absolute;
       top: 67px;
@@ -156,8 +162,9 @@ function leaveBottomNavBar() {
 }
 
 .header__top-navigation-bar-container--shown {
-  transform: translateY(0px);
+  transform: translateY(0);
 }
+
 .header__navigation-bar {
   position: absolute;
   z-index: 97;
@@ -169,19 +176,23 @@ function leaveBottomNavBar() {
   background-color: white;
   cursor: pointer;
   font-size: 18px;
+
   .menu-container,
   .etc {
     display: grid;
     grid-auto-flow: column;
     align-items: center;
   }
+
   .menu-container {
     grid-column-gap: 81px;
   }
+
   .etc {
     grid-column-gap: 56px;
   }
 }
+
 .header__bottom-navigation-bar {
   position: absolute;
   width: 100%;
@@ -191,6 +202,7 @@ function leaveBottomNavBar() {
   border-top: 1px solid black;
   display: flex;
   align-items: center;
+
   .menu-container {
     display: grid;
     grid-auto-flow: column;
@@ -198,19 +210,23 @@ function leaveBottomNavBar() {
     margin-left: 83px;
     font-size: 18px;
   }
+
   .menu-title {
     font-size: 28px;
     font-weight: bold;
   }
+
   .sub-menu-container {
     display: flex;
     flex-direction: column;
+
     p,
     a {
       margin-bottom: 15px;
     }
   }
 }
+
 .header__bottom-navigation-bar--shown {
   transform: translateY(80px);
 }

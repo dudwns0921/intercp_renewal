@@ -50,9 +50,10 @@ function routeTo() {
 .link-box__container {
   position: relative;
   color: white;
-  box-shadow: 0px 3px 6px #0000004d;
+  box-shadow: 0 3px 6px #0000004d;
   font-size: 32px;
 }
+
 .link-box__txt-container {
   position: absolute;
   top: 40px;
@@ -62,15 +63,19 @@ function routeTo() {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .link-box__title {
   font-weight: bold;
 }
+
 .link-box__sub-title {
   font-size: 22px;
 }
+
 .link-box__message {
   font-size: 20px;
 }
+
 .link-box__link {
   display: flex;
   justify-content: center;

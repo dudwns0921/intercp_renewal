@@ -1,7 +1,7 @@
-@import url(./fonts.scss);
+@import "./fonts";
 
 #app {
-    width: 1920px;
-    font-family: 'NotoSansKR-medium';
-    position: relative;
+  width: 1920px;
+  font-family: NotoSansKR-medium;
+  position: relative;
 }

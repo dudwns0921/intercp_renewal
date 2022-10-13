@@ -69,6 +69,7 @@ const currentIdx = ref(0);
     opacity: 0;
     transition: opacity 500ms ease-in-out;
   }
+
   .carousel__img--active {
     opacity: 1;
   }

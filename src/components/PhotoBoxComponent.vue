@@ -22,6 +22,7 @@ const cssVariable = {
 .photo-box__conatiner {
   position: relative;
   cursor: pointer;
+
   .photo-box__title {
     position: absolute;
     top: 50%;
@@ -31,6 +32,7 @@ const cssVariable = {
     font-weight: bold;
     color: #111e4b;
   }
+
   img {
     width: 100%;
     height: 100%;

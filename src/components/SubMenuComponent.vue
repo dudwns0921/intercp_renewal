@@ -26,11 +26,13 @@ const props = defineProps({
   .sub-menu-title {
     font-size: 24px;
   }
+
   .underline {
     width: 60px;
     border-bottom: 1px solid white;
     margin-bottom: 28px;
   }
+
   p {
     margin-bottom: 10px;
   }

@@ -66,6 +66,7 @@ function routeTo() {
 .tab__button-container {
   display: flex;
 }
+
 .tab__button {
   display: flex;
   justify-content: center;
@@ -76,14 +77,17 @@ function routeTo() {
   border: 1px solid #111e4b;
   border-left: none;
   transition: all 0.2s ease-in-out;
+
   &:hover {
     background-color: #111e4b;
     color: white;
   }
 }
+
 .tab__button:first-child {
   border-left: 1px solid #111e4b;
 }
+
 .tab__content {
   position: relative;
   width: 100%;
@@ -92,21 +96,26 @@ function routeTo() {
   flex-direction: column;
   height: 332px;
   border-bottom: 1px solid #111e4b;
+
   table {
     font-size: 23px;
     margin-top: 42px;
     width: 1225px;
+
     td {
       padding-bottom: 20px;
     }
+
     .tab__content-table-cell--title {
       padding-left: 120px;
     }
+
     .tab__content-table-cell--date {
       text-align: end;
     }
   }
 }
+
 .tab__content-more-btn {
   position: absolute;
   font-size: 60px;
@@ -114,6 +123,7 @@ function routeTo() {
   bottom: 36px;
   cursor: pointer;
 }
+
 .tab__button--active {
   background-color: #111e4b;
   color: white;

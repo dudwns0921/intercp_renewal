@@ -46,7 +46,7 @@ const computedTitle = computed(() => {
   justify-content: center;
   align-items: center;
   font-size: 22px;
-  box-shadow: 0px 3px 6px #00000026;
+  box-shadow: 0 3px 6px #00000026;
   cursor: pointer;
 
   .link-box__figure {
@@ -56,11 +56,13 @@ const computedTitle = computed(() => {
     border-bottom: 30px solid transparent;
     border-left: 30px solid #3e74ba;
   }
+
   .link-box__figure--isRecruiting {
     border-bottom: 30px solid transparent;
     border-left: 30px solid red;
   }
 }
+
 .link-box__container--isRecruiting {
   border: 1px solid red;
   color: red;

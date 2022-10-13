@@ -27,17 +27,20 @@ function routeTo() {
   height: 160px;
   position: relative;
   justify-content: center;
-  box-shadow: 0px 3px 6px #0000004d;
+  box-shadow: 0 3px 6px #0000004d;
   font-size: 32px;
   cursor: pointer;
   transition: background-color 200ms ease-in-out;
+
   &:hover {
     background-color: #f5f5f5;
+
     .link-box__title {
       transform: scale(1.1);
     }
   }
 }
+
 .link-box__title {
   position: absolute;
   color: #111e4b;
@@ -45,6 +48,7 @@ function routeTo() {
   top: 40px;
   transition: transform 500ms ease-in-out;
 }
+
 .link-box__link {
   font-size: 16px;
   position: absolute;

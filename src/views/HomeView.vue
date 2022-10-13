@@ -113,6 +113,7 @@ section,
   display: flex;
   justify-content: center;
 }
+
 .introduction-content {
   width: 1440px;
 }
@@ -124,31 +125,37 @@ section,
   align-items: center;
   width: 645px;
   height: 250px;
+
   .figure {
     position: absolute;
     width: 80px;
     height: 80px;
     border: 5px solid #111e4b;
   }
+
   .left-bracket {
     border-right: none;
     border-bottom: none;
     top: 0;
     left: 0;
   }
+
   .right-bracket {
     border-left: none;
     border-top: none;
     bottom: 0;
     right: 0;
   }
+
   .introduction-content__txt {
     font-size: 26px;
   }
+
   .introduction-content__txt--hightlighted {
     font-weight: bold;
     font-size: 30px;
     color: #111e4b;
+
     span {
       color: black;
     }
@@ -163,6 +170,7 @@ section,
   width: 100%;
   height: 700px;
   background: linear-gradient(180deg, #3e74ba 0%, #111e4b 100%);
+
   p {
     display: block;
     font-size: 25px;
@@ -188,6 +196,7 @@ section,
   flex-direction: column;
   align-items: center;
   position: relative;
+
   p {
     font-size: 32px;
     font-weight: bold;
@@ -206,6 +215,7 @@ section,
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px 30px;
   }
+
   .more-btn {
     width: 108px;
     height: 42px;
