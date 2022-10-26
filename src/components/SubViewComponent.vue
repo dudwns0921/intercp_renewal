@@ -9,12 +9,21 @@
     </section>
     <nav>
       <div class="sub-view__nav-bar-container">
-        <div class="nav-bar-menu">Home</div>
-        <div class="nav-bar-menu">INTERCP 소개 🔽</div>
-        <div class="nav-bar-menu">개요 🔽</div>
+        <div class="nav-bar-menu__container">
+          <div class="nav-bar-menu__dropdown"></div>
+          <div class="nav-bar-menu">Home</div>
+        </div>
+        <div class="nav-bar-menu__container">
+          <div class="nav-bar-menu__dropdown"></div>
+          <div class="nav-bar-menu">INTERCP 소개 🔽</div>
+        </div>
+        <div class="nav-bar-menu__container">
+          <div class="nav-bar-menu__dropdown"></div>
+          <div class="nav-bar-menu">개요 🔽</div>
+        </div>
       </div>
     </nav>
-    <section>콘텐츠 영역</section>
+    <section class="sub-view__content-container">콘텐츠 영역</section>
   </div>
 </template>
 
@@ -25,6 +34,7 @@ import PhotoBoxComponent from '../components/PhotoBoxComponent.vue';
 <style lang="scss" scoped>
 .sub-view__photo-box-container {
   position: relative;
+  z-index: 96;
 
   p {
     position: absolute;
@@ -35,38 +45,57 @@ nav {
   display: flex;
   justify-content: center;
   height: 60px;
-  border-top: 1px solid #d4d4d4;
-  border-bottom: 1px solid #d4d4d4;
 
   .sub-view__nav-bar-container {
     width: 1440px;
     height: 100%;
     display: flex;
     align-items: center;
+    background-color: white;
 
-    .nav-bar-menu {
-      display: flex;
+    .nav-bar-menu__container {
+      position: relative;
       width: 180px;
       height: 100%;
-      justify-content: space-between;
+      display: flex;
       align-items: center;
       cursor: pointer;
 
       &:hover {
-        background-color: #3e74ba;
+        .nav-bar-menu__dropdown {
+          transform: translateY(60px);
+        }
       }
-    }
 
-    .nav-bar-menu:first-child {
-      width: 100px;
-    }
+      .nav-bar-menu__dropdown {
+        position: absolute;
+        z-index: 94;
+        background-color: red;
+        width: 100%;
+        height: 200px;
+        top: 0;
+        transform: translateY(-201px);
 
-    .nav-bar-menu:first-child,
-    .nav-bar-menu:nth-child(2) {
-      &::after {
-        content: '→';
+        /* border 길이까지 포함한 길이를 올려야 함 */
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .nav-bar-menu {
+        position: absolute;
+        z-index: 95;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+
+        &:hover {
+          background-color: #3e74ba;
+        }
       }
     }
   }
+}
+
+.sub-view__content-container {
+  border-top: 1px solid #d4d4d4;
 }
 </style>
