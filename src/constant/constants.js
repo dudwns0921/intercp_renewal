@@ -13,9 +13,10 @@ export const PROGRAMS = [
   { title: 'M&B스쿨', isRecruiting: false },
 ];
 
-export const SUB_MENU_DATA = [
+export const MAIN_MENU_DATA = [
   {
     title: 'INTERCP 소개',
+    path: 'introduction',
     subMenuNames: [
       '개요',
       '사역정신',
@@ -36,6 +37,7 @@ export const SUB_MENU_DATA = [
   },
   {
     title: '국내훈련프로그램',
+    path: 'internal',
     subMenuNames: [
       '비전스쿨',
       '해외비전스쿨',
@@ -59,6 +61,7 @@ export const SUB_MENU_DATA = [
   },
   {
     title: '전문사역분야',
+    path: 'ministryPart',
     subMenuNames: [
       '개요',
       '사역정신',
@@ -79,12 +82,17 @@ export const SUB_MENU_DATA = [
   },
   {
     title: '해외프로그램',
+    path: 'overseas',
     subMenuNames: ['개요', '의료분야', 'IT분야', '스포츠분야', '과학기술분야'],
   },
   {
     title: '지역연구',
+    path: 'regionalStudy',
+    subMenuNames: null,
   },
   {
     title: '게시판',
+    path: 'board',
+    subMenuNames: null,
   },
 ];

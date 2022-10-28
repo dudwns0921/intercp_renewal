@@ -3,11 +3,12 @@
     <p class="sub-menu-title">{{ subMenuData.title }}</p>
     <div class="underline" v-if="subMenuData.subMenuNames"></div>
     <p v-for="subMenuName in subMenuData.subMenuNames" :key="subMenuName">
-      {{ subMenuName }}
+      <router-link :to="{ name: 'home' }">{{ subMenuName }}</router-link>
     </p>
   </div>
 </template>
 <script setup>
+import { RouterLink } from 'vue-router';
 const props = defineProps({
   subMenuData: {
     title: {
@@ -19,6 +20,7 @@ const props = defineProps({
     },
   },
 });
+const path = null;
 </script>
 
 <style lang="scss" scoped>
@@ -35,6 +37,7 @@ const props = defineProps({
 
   p {
     margin-bottom: 10px;
+    cursor: pointer;
   }
 }
 </style>

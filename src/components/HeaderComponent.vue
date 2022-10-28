@@ -10,10 +10,12 @@
       <nav class="header__top-navigation-bar">
         <div class="menu-container">
           <div class="logo">
-            <div><router-link to="/">로고</router-link></div>
+            <div>
+              <router-link :to="{ name: 'home' }">로고</router-link>
+            </div>
           </div>
           <sub-menu-component
-            v-for="data in SUB_MENU_DATA"
+            v-for="data in MAIN_MENU_DATA"
             :sub-menu-data="data"
             :key="data.title"
           />
@@ -53,7 +55,7 @@
         <p class="menu-title">INTERCP 소개</p>
         <!-- FIX ME : 컴포넌트화 필요 -->
         <div class="sub-menu-container">
-          <router-link to="/introduction">개요</router-link>
+          <router-link :to="{ name: 'introduction' }">개요</router-link>
           <p>사역정신</p>
           <p>신앙고백</p>
           <p>신학 매뉴얼</p>
@@ -80,7 +82,7 @@
 </template>
 <script setup>
 import SubMenuComponent from '../components/SubMenuComponent.vue';
-import { SUB_MENU_DATA } from '../constant/constants';
+import { MAIN_MENU_DATA } from '../constant/constants';
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 

@@ -20,6 +20,9 @@ const cssVariable = {
 
 <style lang="scss" scoped>
 .photo-box__conatiner {
+  background-color: white;
+
+  /* FIX ME: fallback img 사용할지 기본적으로는 배경을 화이트로 할지 논의 필요 */
   position: relative;
   cursor: pointer;
 

@@ -3,7 +3,7 @@
     <header-component />
   </header>
   <blank-component :height="80" />
-  <RouterView />
+  <RouterView :key="$route.fullPath" />
   <footer>
     <footer-component />
   </footer>

@@ -1,5 +1,5 @@
 <template>
-  <div>국내훈련프로그램</div>
+  <div>비전스쿨</div>
 </template>
 
 <script setup></script>

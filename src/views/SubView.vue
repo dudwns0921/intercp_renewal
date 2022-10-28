@@ -10,25 +10,51 @@
     <nav>
       <div class="sub-view__nav-bar-container">
         <div class="nav-bar-menu__container">
-          <div class="nav-bar-menu__dropdown"></div>
           <div class="nav-bar-menu">Home</div>
         </div>
+        <div>></div>
         <div class="nav-bar-menu__container">
-          <div class="nav-bar-menu__dropdown"></div>
+          <div class="nav-bar-menu__dropdown">
+            <p v-for="data in MAIN_MENU_DATA" :key="data">
+              <router-link :to="{ name: data.path }">{{
+                data.title
+              }}</router-link>
+            </p>
+          </div>
           <div class="nav-bar-menu">INTERCP 소개 🔽</div>
         </div>
-        <div class="nav-bar-menu__container">
-          <div class="nav-bar-menu__dropdown"></div>
+        <div v-if="submenuNames">></div>
+        <div class="nav-bar-menu__container" v-if="submenuNames">
+          <div class="nav-bar-menu__dropdown">
+            <p v-for="submenu in submenuNames" :key="submenu">
+              {{ submenu }}
+            </p>
+          </div>
           <div class="nav-bar-menu">개요 🔽</div>
         </div>
       </div>
     </nav>
-    <section class="sub-view__content-container">콘텐츠 영역</section>
+    <section class="sub-view__content-container">
+      <RouterView></RouterView>
+    </section>
   </div>
 </template>
 
 <script setup>
 import PhotoBoxComponent from '../components/PhotoBoxComponent.vue';
+import { MAIN_MENU_DATA } from '@/constant/constants';
+import { ref } from 'vue';
+import { RouterView, useRoute, RouterLink } from 'vue-router';
+
+const route = useRoute();
+const submenuNames = ref([]);
+
+for (const data of MAIN_MENU_DATA) {
+  if (data.path === route.name) {
+    submenuNames.value = data.subMenuNames;
+    break;
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -57,12 +83,15 @@ nav {
       position: relative;
       width: 180px;
       height: 100%;
-      display: flex;
-      align-items: center;
       cursor: pointer;
 
       &:hover {
+        .nav-bar-menu {
+          background-color: #3e74ba;
+        }
+
         .nav-bar-menu__dropdown {
+          opacity: 1;
           transform: translateY(60px);
         }
       }
@@ -70,26 +99,30 @@ nav {
       .nav-bar-menu__dropdown {
         position: absolute;
         z-index: 94;
-        background-color: red;
+        background-color: white;
+        border: #3e74ba 1px solid;
+        border-top: none;
         width: 100%;
-        height: 200px;
+        opacity: 0;
         top: 0;
-        transform: translateY(-201px);
+        transform: translateY(-100%);
+        transition: all 0.3s ease-in-out;
 
-        /* border 길이까지 포함한 길이를 올려야 함 */
-        transition: transform 0.5s ease-in-out;
+        p {
+          &:hover {
+            background-color: #3e74ba;
+          }
+        }
       }
 
       .nav-bar-menu {
         position: absolute;
+        display: flex;
+        align-items: center;
         z-index: 95;
         width: 100%;
         height: 100%;
         background-color: white;
-
-        &:hover {
-          background-color: #3e74ba;
-        }
       }
     }
   }

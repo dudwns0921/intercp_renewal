@@ -1,9 +1,7 @@
 <template>
-  <div><sub-view-component /></div>
+  <div>Summary</div>
 </template>
 
-<script setup>
-import SubViewComponent from '@/components/SubViewComponent.vue';
-</script>
+<script setup></script>
 
 <style scoped lang="scss"></style>
