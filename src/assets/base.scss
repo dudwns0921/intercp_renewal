@@ -1,8 +1,49 @@
 @import "./fonts";
 
+// variables setting
+$xsmall-font:12px;
+$small-font:14px;
+$default-font:16px;
+$large-font:18px;
+$xlarge-font:20px;
+
+// common > font
+.ft{
+  &-xsmall{font-size: 12px;}
+  &-small {font-size: 14px;}
+  &-medium {font-size: $default-font;}
+  &-large {font-size: 18px}
+  &-xlarge {font-size: 20px;}
+}
+.color{
+  -blue{color: dodgerblue;}
+  -red{color: red;}
+  -primary{color: royalblue;}
+  -worning{color: orangered;}
+}
+
+// layout
 #app {
-  width: 1920px;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
   font-family: NotoSansKR-medium;
   position: relative;
-  margin: 0 auto;
+
+    header, section{
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    section {
+      padding: 0 40px;
+    }
+}
+// tab
+.tab-noticeBoard{
+  table{
+    td{
+      font-size: $default-font;
+    }
+  }
 }

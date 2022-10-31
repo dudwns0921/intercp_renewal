@@ -63,6 +63,9 @@ function routeTo() {
 </script>
 
 <style lang="scss" scoped>
+.tab__tab-container {
+  width: 100%;
+}
 .tab__button-container {
   display: flex;
 }
@@ -98,12 +101,18 @@ function routeTo() {
   border-bottom: 1px solid #111e4b;
 
   table {
-    font-size: 23px;
+    // font-size: 23px;
     margin-top: 42px;
-    width: 1225px;
+    width: 100%;
 
     td {
       padding-bottom: 20px;
+    }
+    td:first-of-type {
+      padding-left: 40px;
+    }
+    td:last-of-type {
+      padding-right: 40px;
     }
 
     .tab__content-table-cell--title {

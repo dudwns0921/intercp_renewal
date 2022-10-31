@@ -1,5 +1,7 @@
 <template>
-  <section><carousel-component :img-files="imgFiles" /></section>
+  <section class="imgBlock">
+    <carousel-component :img-files="imgFiles" />
+  </section>
   <blank-component :height="80" />
   <section>
     <div class="introduction-content">
@@ -17,7 +19,7 @@
     </div>
   </section>
   <blank-component :height="80" />
-  <section>
+  <section class="imgBlock">
     <div class="introduction-content">
       <div class="introduction-content__video-container">
         <p>InterCP 소개 동영상</p>
@@ -58,7 +60,7 @@
   </section>
   <blank-component :height="132" />
   <section>
-    <div class="introduction-content">
+    <div class="introduction-content tab-noticeBoard">
       <tab-component :tabs="TABS" />
     </div>
   </section>
@@ -110,12 +112,15 @@ import { imgFiles } from '../mock/mockData';
 section,
 .introduction-content {
   width: 100%;
+  max-width: 1440px;
   display: flex;
   justify-content: center;
 }
-
-.introduction-content {
-  width: 1440px;
+#app section.imgBlock {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .introduction-content__txt-container {
@@ -147,13 +152,13 @@ section,
     right: 0;
   }
 
-  .introduction-content__txt {
-    font-size: 26px;
-  }
+  // .introduction-content__txt {
+  //   font-size: 26px;
+  // }
 
   .introduction-content__txt--hightlighted {
     font-weight: bold;
-    font-size: 30px;
+    // font-size: 30px;
     color: #111e4b;
 
     span {
@@ -173,7 +178,7 @@ section,
 
   p {
     display: block;
-    font-size: 25px;
+    // font-size: 25px;
     font-weight: bold;
     color: white;
   }
@@ -198,7 +203,7 @@ section,
   position: relative;
 
   p {
-    font-size: 32px;
+    // font-size: 32px;
     font-weight: bold;
   }
 

@@ -38,7 +38,7 @@
 
 .footer__txt-container {
   display: flex;
-  font-size: 14px;
+  // font-size: $default-font;
   flex-direction: column;
   justify-content: flex-end;
   height: 86px;
