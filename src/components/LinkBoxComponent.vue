@@ -28,7 +28,8 @@ function routeTo() {
   position: relative;
   justify-content: center;
   box-shadow: 0 3px 6px #0000004d;
-  font-size: 32px;
+  font-size: 22px;
+  border: 1px solid #e1e1e1;
   cursor: pointer;
   transition: background-color 200ms ease-in-out;
 
@@ -54,5 +55,25 @@ function routeTo() {
   position: absolute;
   right: 36px;
   bottom: 30px;
+}
+@media (max-width: 800px) {
+  .introduction-content__link-box-container {
+    .link-box__container {
+      margin-bottom: 20px;
+      height: 80px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .link-box__title {
+        font-size: 16px;
+        position: unset;
+      }
+      .link-box__link {
+        position: unset;
+        font-size: 12px;
+      }
+    }
+  }
 }
 </style>

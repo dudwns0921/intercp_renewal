@@ -18,11 +18,11 @@
 <style lang="scss" scoped>
 .footer__container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 30px;
   border-top: 1px solid black;
   height: 146px;
+  font-size: 14px;
+  padding-left: 40px;
 }
 
 .footer__logo-container {
@@ -42,5 +42,14 @@
   flex-direction: column;
   justify-content: flex-end;
   height: 86px;
+}
+@media (max-width: 800px) {
+  .footer__txt-container {
+    height: auto;
+    font-size: 12px;
+  }
+  .footer__container {
+    padding: 20px;
+  }
 }
 </style>

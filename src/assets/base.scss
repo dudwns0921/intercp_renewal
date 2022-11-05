@@ -21,7 +21,9 @@ $xlarge-font:20px;
   -primary{color: royalblue;}
   -worning{color: orangered;}
 }
-
+h2.sub-title{
+  font-size: 18px;
+}
 // layout
 #app {
   width: 100%;
@@ -39,6 +41,9 @@ $xlarge-font:20px;
       padding: 0 40px;
     }
 }
+.video-content{
+      width: 100%;
+}
 // tab
 .tab-noticeBoard{
   table{
@@ -46,4 +51,24 @@ $xlarge-font:20px;
       font-size: $default-font;
     }
   }
+}
+
+@media (max-width:800px) {
+#app {
+    width: 100%;
+    max-width: none;
+    section {
+        padding: 0 20px;
+      }
+  }
+  .tab-noticeBoard {
+    table {
+      td {
+        font-size: $xsmall-font;
+      }
+    }
+  }
+}
+@media screen and (min-width:801px) and (max-width:1440px) {
+  
 }

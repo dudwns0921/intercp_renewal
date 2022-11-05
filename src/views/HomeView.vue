@@ -20,10 +20,21 @@
   </section>
   <blank-component :height="80" />
   <section class="imgBlock">
-    <div class="introduction-content">
+    <div class="video-content">
       <div class="introduction-content__video-container">
-        <p>InterCP 소개 동영상</p>
+        <h2>InterCP 소개 동영상</h2>
         <iframe
+          v-if="isMobile"
+          width="100%"
+          height="357"
+          src="https://www.youtube.com/embed/W2_Cj1SuBLI"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          v-else
           width="988"
           height="557"
           src="https://www.youtube.com/embed/W2_Cj1SuBLI"
@@ -35,7 +46,8 @@
       </div>
     </div>
   </section>
-  <blank-component :height="100" />
+  <blank-component v-if="isMobile" :height="60" />
+  <blank-component v-else :height="100" />
   <section>
     <div class="introduction-content">
       <div class="introduction-content__link-box-container">
@@ -46,7 +58,7 @@
     </div>
   </section>
   <blank-component :height="40" />
-  <section>
+  <section v-bind:class="{ imgBlock: isMobile }">
     <div class="introduction-content">
       <link-box-component-large
         title="TARGET 2030"
@@ -58,28 +70,30 @@
       />
     </div>
   </section>
-  <blank-component :height="132" />
+  <blank-component v-if="isMobile" :height="60" />
+  <blank-component v-else :height="132" />
   <section>
     <div class="introduction-content tab-noticeBoard">
       <tab-component :tabs="TABS" />
     </div>
   </section>
-  <blank-component :height="70" />
+  <blank-component v-if="isMobile" :height="40" />
+  <blank-component v-else :height="70" />
   <section class="introduction-content__programs">
     <div class="introduction-content introduction-content__programs-container">
-      <p>참여 프로그램</p>
+      <h2 class="sub-title">참여 프로그램</h2>
       <blank-component :height="24" />
       <div class="introduction-content__participate-programs-container">
         <photo-box-component
           v-for="imgFile in imgFiles.slice(0, 2)"
           :key="imgFile"
           :img-file="imgFile"
-          height="265px"
           :shadow="true"
         />
       </div>
-      <blank-component :height="40" />
-      <p>국내외 프로그램</p>
+      <blank-component v-if="isMobile" :height="20" />
+      <blank-component v-else :height="100" />
+      <h2 class="sub-title">국내외 프로그램</h2>
       <blank-component :height="24" />
       <div class="introduction-content__in-out-programs-container">
         <link-box-component-decorated
@@ -107,6 +121,19 @@ import PhotoBoxComponent from '../components/PhotoBoxComponent.vue';
 import { TABS, PROGRAMS } from '../constant/constants';
 import { imgFiles } from '../mock/mockData';
 </script>
+<script>
+export default {
+  methods: {
+    isMobile() {
+      if (screen.width <= 800) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 section,
@@ -128,9 +155,12 @@ section,
   display: grid;
   justify-items: center;
   align-items: center;
-  width: 645px;
-  height: 250px;
+  width: 540px;
+  height: 230px;
 
+  .introduction-content__txt {
+    text-align: center;
+  }
   .figure {
     position: absolute;
     width: 80px;
@@ -176,9 +206,7 @@ section,
   height: 700px;
   background: linear-gradient(180deg, #3e74ba 0%, #111e4b 100%);
 
-  p {
-    display: block;
-    // font-size: 25px;
+  h2 {
     font-weight: bold;
     color: white;
   }
@@ -233,6 +261,50 @@ section,
     color: white;
     background-color: #3e74ba;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 800px) {
+  #app {
+    section.imgBlock {
+      max-width: none;
+    }
+  }
+  section,
+  .introduction-content {
+    max-width: none;
+  }
+  .introduction-content__video-container {
+    height: 440px;
+  }
+  .introduction-content__link-box-container {
+    display: flex;
+    flex-direction: column;
+  }
+  h2.sub-title {
+    margin: 15px 0 0;
+  }
+  .introduction-content__programs-container {
+    height: auto;
+    padding: 0 0 40px;
+    .introduction-content__participate-programs-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .introduction-content__in-out-programs-container {
+      display: flex;
+      flex-wrap: wrap;
+      grid-gap: 15px;
+      .link-box__container {
+        height: 60px;
+        font-size: 14px;
+        width: calc(50% - 8px);
+      }
+    }
+    .more-btn {
+      position: unset;
+      font-size: 12px;
+    }
   }
 }
 </style>

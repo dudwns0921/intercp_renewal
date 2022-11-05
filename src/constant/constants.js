@@ -11,6 +11,7 @@ export const PROGRAMS = [
   { title: '영어 비전스쿨', isRecruiting: false },
   { title: 'M&M스쿨', isRecruiting: false },
   { title: 'M&B스쿨', isRecruiting: false },
+  { title: 'M&B스쿨', isRecruiting: false },
 ];
 
 export const MAIN_MENU_DATA = [

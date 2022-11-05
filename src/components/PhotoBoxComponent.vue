@@ -42,4 +42,10 @@ const cssVariable = {
     object-fit: cover;
   }
 }
+@media (max-width: 800px) {
+  .photo-box__conatiner {
+    height: 130px;
+    margin-bottom: 20px;
+  }
+}
 </style>

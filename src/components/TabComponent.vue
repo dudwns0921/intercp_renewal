@@ -97,7 +97,7 @@ function routeTo() {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 332px;
+  height: 285px;
   border-bottom: 1px solid #111e4b;
 
   table {
@@ -108,33 +108,69 @@ function routeTo() {
     td {
       padding-bottom: 20px;
     }
-    td:first-of-type {
+    .tab__content-table-cell--num {
       padding-left: 40px;
+      width: 160px;
     }
-    td:last-of-type {
-      padding-right: 40px;
-    }
-
     .tab__content-table-cell--title {
       padding-left: 120px;
     }
 
     .tab__content-table-cell--date {
       text-align: end;
+      padding-right: 40px;
     }
   }
 }
 
 .tab__content-more-btn {
   position: absolute;
-  font-size: 60px;
-  right: 50px;
-  bottom: 36px;
+  font-size: 40px;
+  right: 35px;
+  bottom: 12px;
   cursor: pointer;
 }
 
 .tab__button--active {
   background-color: #111e4b;
   color: white;
+}
+@media (max-width: 800px) {
+  .tab__button {
+    height: 60px;
+    font-size: 12px;
+    padding: 9px;
+    word-break: keep-all;
+  }
+  .tab__content {
+    height: 240px;
+    table {
+      // font-size: 23px;
+      margin-top: 42px;
+      width: 100%;
+
+      td {
+        padding-bottom: 20px;
+      }
+
+      .tab__content-table-cell--num {
+        padding-left: 5px;
+        width: 40px;
+      }
+
+      .tab__content-table-cell--title {
+        padding-left: 5px;
+      }
+
+      .tab__content-table-cell--date {
+        text-align: end;
+        padding-right: 5px;
+      }
+    }
+  }
+  .tab__content-more-btn {
+    font-size: 30px;
+    right: 5px;
+  }
 }
 </style>
