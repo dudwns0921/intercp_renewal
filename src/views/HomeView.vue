@@ -266,9 +266,7 @@ section,
     cursor: pointer;
   }
 }
-footer {
-  border-top: 1px solid black;
-}
+
 @media (max-width: 800px) {
   #app {
     section.imgBlock {
