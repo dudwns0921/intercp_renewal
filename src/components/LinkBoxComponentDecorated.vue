@@ -58,6 +58,7 @@ const computedTitle = computed(() => {
     position: absolute;
     top: 0;
     left: 0;
+    border-bottom: 30px solid transparent;
     border-left: 30px solid #3e74ba;
   }
 

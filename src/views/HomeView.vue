@@ -24,7 +24,7 @@
       <div class="introduction-content__video-container">
         <h2>InterCP 소개 동영상</h2>
         <iframe
-          v-if="isMobile"
+          v-if="isMobile()"
           width="100%"
           height="357"
           src="https://www.youtube.com/embed/W2_Cj1SuBLI"
@@ -46,7 +46,7 @@
       </div>
     </div>
   </section>
-  <blank-component v-if="isMobile" :height="60" />
+  <blank-component v-if="isMobile()" :height="60" />
   <blank-component v-else :height="100" />
   <section>
     <div class="introduction-content">
@@ -58,7 +58,7 @@
     </div>
   </section>
   <blank-component :height="40" />
-  <section v-bind:class="{ imgBlock: isMobile }">
+  <section v-bind:class="{ imgBlock: isMobile() }">
     <div class="introduction-content">
       <link-box-component-large
         title="TARGET 2030"
@@ -70,14 +70,14 @@
       />
     </div>
   </section>
-  <blank-component v-if="isMobile" :height="60" />
+  <blank-component v-if="isMobile()" :height="60" />
   <blank-component v-else :height="132" />
   <section>
     <div class="introduction-content tab-noticeBoard">
       <tab-component :tabs="TABS" />
     </div>
   </section>
-  <blank-component v-if="isMobile" :height="40" />
+  <blank-component v-if="isMobile()" :height="40" />
   <blank-component v-else :height="70" />
   <section class="introduction-content__programs">
     <div class="introduction-content introduction-content__programs-container">
@@ -91,7 +91,7 @@
           :shadow="true"
         />
       </div>
-      <blank-component v-if="isMobile" :height="20" />
+      <blank-component v-if="isMobile()" :height="20" />
       <blank-component v-else :height="100" />
       <h2 class="sub-title">국내외 프로그램</h2>
       <blank-component :height="24" />
@@ -126,8 +126,10 @@ export default {
   methods: {
     isMobile() {
       if (screen.width <= 800) {
+        console.log('true');
         return true;
       } else {
+        console.log('false');
         return false;
       }
     },
@@ -225,7 +227,7 @@ section,
 
 .introduction-content__programs-container {
   padding: 50px 0;
-  height: 822px;
+  height: auto;
   flex-direction: column;
   align-items: center;
   position: relative;
@@ -255,15 +257,18 @@ section,
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    right: 0;
-    bottom: 50px;
+    margin-left: auto;
+    // position: absolute;
+    // right: 0;
+    // bottom: 50px;
     color: white;
     background-color: #3e74ba;
     cursor: pointer;
   }
 }
-
+footer {
+  border-top: 1px solid black;
+}
 @media (max-width: 800px) {
   #app {
     section.imgBlock {
@@ -304,6 +309,7 @@ section,
     .more-btn {
       position: unset;
       font-size: 12px;
+      margin: auto;
     }
   }
 }

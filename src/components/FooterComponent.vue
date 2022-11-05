@@ -19,10 +19,13 @@
 .footer__container {
   display: flex;
   align-items: center;
-  border-top: 1px solid black;
+  // border-top: 1px solid black;
   height: 146px;
   font-size: 14px;
   padding-left: 40px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .footer__logo-container {
@@ -47,6 +50,7 @@
   .footer__txt-container {
     height: auto;
     font-size: 12px;
+    max-width: none;
   }
   .footer__container {
     padding: 20px;
