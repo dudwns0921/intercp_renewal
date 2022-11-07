@@ -45,7 +45,7 @@ const currentIdx = ref(0);
 .carousel__img-container {
   position: relative;
   width: 100%;
-  height: 800px;
+  height: 650px;
 
   .carousel__txt-container {
     position: absolute;
@@ -94,6 +94,13 @@ const currentIdx = ref(0);
     height: 52px;
     background-color: #3e74ba;
     border-radius: 30px;
+  }
+}
+
+@media (max-width: 800px) {
+  .carousel__img-container .carousel__txt-container {
+    left: 1%;
+    top: 1%;
   }
 }
 </style>

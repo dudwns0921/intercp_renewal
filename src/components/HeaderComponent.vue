@@ -178,7 +178,7 @@ function leaveBottomNavBar() {
   padding: 27px 217px 27px 83px;
   background-color: white;
   cursor: pointer;
-  font-size: 18px;
+  // font-size: $xlarge-font;
   border-bottom: 1px solid black;
 
   .menu-container,

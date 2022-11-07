@@ -1,5 +1,5 @@
 <template>
-  <div :style="cssVariable"></div>
+  <div :style="cssVariable" class="blank"></div>
 </template>
 
 <script setup>

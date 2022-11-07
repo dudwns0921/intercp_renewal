@@ -45,10 +45,15 @@ const computedTitle = computed(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 22px;
+  font-size: 16px;
+  border: 1px solid #e1e1e1;
   box-shadow: 0 3px 6px #00000026;
   cursor: pointer;
 
+  &:hover {
+    background: #3f74ba;
+    color: #fff;
+  }
   .link-box__figure {
     position: absolute;
     top: 0;
@@ -59,12 +64,17 @@ const computedTitle = computed(() => {
 
   .link-box__figure--isRecruiting {
     border-bottom: 30px solid transparent;
-    border-left: 30px solid red;
+    border-left: 30px solid tomato;
   }
 }
 
 .link-box__container--isRecruiting {
-  border: 1px solid red;
-  color: red;
+  border: 1px solid tomato;
+  color: tomato;
+
+  &:hover {
+    background: tomato;
+    color: #fff;
+  }
 }
 </style>
