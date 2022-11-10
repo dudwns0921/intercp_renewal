@@ -1,7 +1,5 @@
 <template>
-  <header>
-    <header-component />
-  </header>
+  <header-component />
   <blank-component :height="80" />
   <RouterView :key="$route.fullPath" />
   <footer>

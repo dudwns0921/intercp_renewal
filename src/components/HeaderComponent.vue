@@ -107,7 +107,9 @@ function leaveBottomNavBar() {
 .header__navigation-container {
   position: fixed;
   z-index: 98;
-  width: 1920px;
+  width: 100%;
+  max-width: 1920px;
+  margin: auto 0;
   height: 80px;
   background-color: white;
 }
@@ -172,6 +174,7 @@ function leaveBottomNavBar() {
   position: absolute;
   z-index: 97;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -200,8 +203,8 @@ function leaveBottomNavBar() {
 .header__bottom-navigation-bar {
   position: absolute;
   width: 100%;
-  height: 324px;
-  transform: translateY(-244px);
+  padding-top: 20px;
+  transform: translateY(-240px);
   background-color: white;
   display: flex;
   align-items: center;
