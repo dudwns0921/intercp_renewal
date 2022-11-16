@@ -24,7 +24,7 @@
       <div class="introduction-content__video-container">
         <h2>InterCP 소개 동영상</h2>
         <iframe
-          v-if="isMobile()"
+          v-if="isMobile"
           width="100%"
           height="357"
           src="https://www.youtube.com/embed/W2_Cj1SuBLI"
@@ -46,7 +46,7 @@
       </div>
     </div>
   </section>
-  <blank-component v-if="isMobile()" :height="60" />
+  <blank-component v-if="isMobile" :height="60" />
   <blank-component v-else :height="100" />
   <section>
     <div class="introduction-content">
@@ -58,7 +58,7 @@
     </div>
   </section>
   <blank-component :height="40" />
-  <section v-bind:class="{ imgBlock: isMobile() }">
+  <section v-bind:class="{ imgBlock: isMobile }">
     <div class="introduction-content">
       <link-box-component-large
         title="TARGET 2030"
@@ -70,14 +70,14 @@
       />
     </div>
   </section>
-  <blank-component v-if="isMobile()" :height="60" />
+  <blank-component v-if="isMobile" :height="60" />
   <blank-component v-else :height="132" />
   <section>
     <div class="introduction-content tab-noticeBoard">
       <tab-component :tabs="TABS" />
     </div>
   </section>
-  <blank-component v-if="isMobile()" :height="40" />
+  <blank-component v-if="isMobile" :height="40" />
   <blank-component v-else :height="70" />
   <section class="introduction-content__programs">
     <div class="introduction-content introduction-content__programs-container">
@@ -91,7 +91,7 @@
           :shadow="true"
         />
       </div>
-      <blank-component v-if="isMobile()" :height="20" />
+      <blank-component v-if="isMobile" :height="20" />
       <blank-component v-else :height="100" />
       <h2 class="sub-title">국내외 프로그램</h2>
       <blank-component :height="24" />
@@ -120,21 +120,19 @@ import PhotoBoxComponent from '../components/PhotoBoxComponent.vue';
 
 import { TABS, PROGRAMS } from '../constant/constants';
 import { imgFiles } from '../mock/mockData';
-</script>
-<script>
-export default {
-  methods: {
-    isMobile() {
-      if (screen.width <= 800) {
-        console.log('true');
-        return true;
-      } else {
-        console.log('false');
-        return false;
-      }
-    },
-  },
-};
+import { onBeforeMount, onMounted, ref } from 'vue';
+
+window.addEventListener('resize', checkScreenWidth);
+
+const isMobile = ref(false);
+
+function checkScreenWidth() {
+  if (document.documentElement.clientWidth <= 800) {
+    isMobile.value = true;
+  } else {
+    isMobile.value = false;
+  }
+}
 </script>
 
 <style lang="scss" scoped>
