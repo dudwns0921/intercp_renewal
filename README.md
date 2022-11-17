@@ -1,4 +1,4 @@
-# intercop-renewal
+# intercp-renewal
 
 ## 🎯 Project's Goal
 
